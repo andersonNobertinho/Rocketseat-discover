@@ -1,0 +1,80 @@
+<!-- define um arquivo html -->
+<!DOCTYPE html>
+<!-- é o elemento raiz com atributo de linguagem -->
+<html lang="pt-br" class="light">
+  <!-- ajusta configurações do documento que não são visiveis para quem está acessando nossa página -->
+  <head>
+    <!-- Insere o código para utilização das fontes do google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet">
+
+
+    <!-- define quais os conjuntos de caracteres que serão utilizados nessa página -->
+    <meta charset="UTF-8" />
+    <!-- linha para gerar compatibilidade de navegadores antigos -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- definindo que a parte visivel tenha como largura do conteúdo com a largura da tela do dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Indica onde está o arquivo css -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <!-- parte vísivel da página -->
+  <body>
+    <div id="container">
+      <div id="profile">
+        <img src="./assets/avatar.png" alt="">
+         <p>@Ferreirinha</p>
+      </div>
+      <!--Cria uma div com id chamado switch que tem uma propriedade onclick que chama uma função chamada toggleMode() que está dentro do javaScript -->
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+
+      <!--Insere a lista de botões-->
+      <ul>
+        <!--Insere dentro da lista de botões um item com link para se inscrever-->
+        <li><a href="#">Inscrever-se</a></li>
+        <!--Insere dentro da lista de botões um item com link para o portifólio-->
+        <li><a href="#">Ver meu portifólio</a></li>
+        <!--Insere dentro da lista de botões um item com link para o e-book-->
+        <li><a href="#">Baixar meu e-book</a></li>
+        <!--Insere dentro da lista de botões um item com link para a pagina da rocketseat-->
+        <li><a href="https://rocketseat.com.br/explorer" target="_blank">Conheça o Explorer</a></li>
+      </ul>
+
+      <!-- Div com id de nome social-links onde estão as lista de icones do ionicons -->
+      <div id="social-links">
+
+        <!-- insere o icone do github -->
+        <a href="https://github.com" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <!-- insere o icone do instagram -->
+        <a href="https://instagram.com" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <!-- insere o icone do youtube -->
+        <a href="https://youtube.com" target="_blank">
+        <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <!-- insere o icone do linkedin -->
+        <a href="https://linkedin.com" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+
+      <footer>
+        Feito com ♥ pela <a href="https://rocketseat.com.br/">Rocketseat</a>
+      </footer>
+    </div>
+  <!-- codigo que instala os icones do ionicons para serem utilizados na página -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="./scrpt.js"></script>
+
+
+  </body>
+</html>

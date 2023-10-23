@@ -1,0 +1,211 @@
+/* Reseta as margens do navegador*/
+*{
+  margin: 0;
+  padding: 0;
+  /* Medida do tamanho da caixa */
+  box-sizing: border-box;
+}
+
+/*Pega toda a página*/
+:root{
+  /*Cria uma variável com a cor branca*/
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --strok-color:  rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover:rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light{
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --strok-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover:rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+   --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+  /*background: color, image, repeat, position/size*/
+  /*background: url(./assets/bg-mobile.jpg) no-repeat top center/cover; */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+/* estiliza todo o body com as familia de fontes inter e poppins */
+body *{
+  /* Adiciona a fonte da familia inter */
+  font-family: 'Inter', sans-serif;
+  /* Adiciona a fonte da familia Poppins */
+  font-family: 'Poppins', sans-serif;
+  /*Chama a função para colocar a variável que foi criada dentro do seletor root*/
+  color: var(--text-color);
+
+
+  /* Muda a cor do texto do body para branca */
+  /*color: #ffffff;*/
+}
+/* estiliza todo o body com as familia de fontes inter e poppins */
+#container{
+  /* coloca uma borda com 1 pixel de largura, solida e com a cor vermelha */
+  /*border: 1px solid red  ;*/
+  /* Define a largura da div com o id container em 360px */
+  width: 360px;
+   /* Define a altura da div com o id container em 720px */
+  height: 712px;
+   /* Define as margens laterais como automatica, o topo com 56px e bottom com 0, com isso centraliza a div no meio */
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+
+/* Centraliza os filhos da div com id profile */
+#profile{
+  text-align: center;
+  padding: 24px;
+}
+
+
+#profile img{
+  /*display: block; Caso não tivesse centralizado os elementos filhos da div profile poderiamos altera o display para block e assim colocar uma margin: auto */
+   /* Define uma largura para o elemento img que está dentro da div profile  */
+  width: 112px;
+}
+
+#profile p{
+  /* Peso da fonte de 400 */
+  font-weight: 400;
+  /* Tamanho da fonte de 16px, por padrão os navegadores já colocam as fontem em 16px por isso, não seria necessário essa linha  */
+  font-size: 16px;
+  /* Controla o espaçamento entre as linhas de um texto */
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+#switch{
+  width: 64px;
+  position: relative;
+  margin: 4px auto; 
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button{
+  right: 0;
+  left: initial;
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--strok-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 999px;
+}
+
+/*Links*/
+ul{
+  list-style: none;
+/* O display flex trabalha com os elementos dentro da caixa, deixando um do lado do outro*/
+  display: flex;
+  /* Por padrão o flex-direction já é row então não precisaria dessa linha
+  flex-direction: row;
+  */
+  /* Faz os elementos ficarem em uma coluna, ficando um em baixo do outro*/
+  flex-direction: column;
+  /* Coloca um espaçamento entre os elementos*/
+  gap: 16px;
+
+  padding: 24px 0;
+  
+  
+}
+
+
+ul li a{
+ 
+  /*O display flex vai fazer com que o a ocupe todo o espaço da caixa*/
+   display: flex;
+   /*Como o display é flex ele alinha o conteúdo no meio*/
+  justify-content: center;
+  /*Coloca um padding de 16px em cima e em baixo e um padding de 24 na direita e na esquerda!*/
+  padding: 16px   24px;
+  /*Alinha o elemento no meio do eixo x da linha */
+  align-items: center;
+  /*Muda a cor de fundo*/
+  background: var(--surface-color-dark-mode, var(--surface-color));
+  /*Arredonda a borda do botão*/
+  border-radius: 8px;
+  /*Coloca uma borda no botão*/
+  border: 1px solid var(--stroke-color-dark-mode, var(--strok-color));
+  /*Deixa o fundo do botão com um aspecto borrado*/
+  backdrop-filter: blur(4px);
+  /*Coloca essa linha para o safari 9 ficar compativel com o backdrop-filter*/
+  -webkit-backdrop-filter: blur(4px);
+  /*Tira a linha de sublinhado do link*/
+  text-decoration: none;
+  /*Peso da fonte*/
+  font-weight: 500;
+  /*Faz a transição do hover, ficando mais suave */
+  transition: background 0.2s;
+}
+
+/*pseudo-selector*/
+ul li a:hover{
+  /*Ao passar o mouse essa cor de fundo e borda são utilizados*/
+  background: --surface-color-hover;
+  /*Coloca uma borda solida com espessura  branca nos links dos botões*/
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links{
+  display: flex;
+  justify-content: center;
+  padding: 24px 0px;
+  font-size: 24px;
+}
+
+#social-links a{
+  display: flex;
+  /*Alinha o item no centro horizontal*/
+  align-items: center;
+  /*Alinha o item no centro vertical*/
+  justify-content: center;
+/*Coloca um padding de 16px*/
+  padding: 16px;
+  /*Deixa a borda dos links arredondada*/
+  border-radius: 50%;
+  /*Coloca uma transição de 2s ao passar o mouse*/
+  transition: background 0.2s;
+}
+
+#social-links a:hover{
+  /*Ao passar o mouse ele coloca um fundo levemente cinza*/
+  background: var(--highlight-color);
+
+}
+
+footer{
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
