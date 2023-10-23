@@ -38,6 +38,7 @@ body {
   /*background: color, image, repeat, position/size*/
   /*background: url(./assets/bg-mobile.jpg) no-repeat top center/cover; */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 /* estiliza todo o body com as familia de fontes inter e poppins */
 body *{
@@ -57,7 +58,8 @@ body *{
   /* coloca uma borda com 1 pixel de largura, solida e com a cor vermelha */
   /*border: 1px solid red  ;*/
   /* Define a largura da div com o id container em 360px */
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
    /* Define a altura da div com o id container em 720px */
   height: 712px;
    /* Define as margens laterais como automatica, o topo com 56px e bottom com 0, com isso centraliza a div no meio */
@@ -208,4 +210,15 @@ footer{
   padding: 24px;
   text-align: center;
   font-size: 14px;
+}
+
+/*Media queries */
+@media (min-width: 700px) {
+  :root{
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
